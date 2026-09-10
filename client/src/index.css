@@ -194,10 +194,10 @@ em { color: var(--orange); font-style: italic; font-weight: 400; }
 .package-card__top { top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: 9px; letter-spacing: .15em; color: rgba(255,250,241,.75); }
 .package-card__arrow { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255,250,241,.5); border-radius: 50%; transition: background .2s ease, color .2s ease, transform .2s ease; }
 .package-card:hover .package-card__arrow { background: var(--orange); color: #fff; border-color: var(--orange); transform: rotate(45deg); }
-.package-card__bottom { bottom: 23px; }
+.package-card__bottom { bottom: 0; display: flex; flex-direction: column; align-items: flex-start; padding: 22px 0 23px; }
 .package-card__tag { display: inline-block; color: #f0aa90; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 11px; }
-.package-card h3 { margin: 0; font-family: "Manrope", ui-sans-serif, sans-serif; font-size: 27px; line-height: 1.08; font-weight: 800; letter-spacing: -.05em; }
-.package-card p { max-width: 265px; margin: 13px 0 18px; color: rgba(255,250,241,.76); font-size: 12px; line-height: 1.55; }
+.package-card h3 { max-width: 100%; margin: 0; font-family: "Manrope", ui-sans-serif, sans-serif; font-size: 27px; line-height: 1.12; font-weight: 800; letter-spacing: -.05em; }
+.package-card p { max-width: 290px; margin: 12px 0 17px; color: rgba(255,250,241,.76); font-size: 12px; line-height: 1.6; }
 .package-card__duration { display: inline-flex; align-items: center; gap: 5px; color: rgba(255,250,241,.65); font-size: 10px; }
 
 .services-section { padding-top: 119px; padding-bottom: 110px; }
@@ -321,6 +321,9 @@ em { color: var(--orange); font-style: italic; font-weight: 400; }
   .section-heading > p { margin-top: 25px; }
   .package-grid { display: block; margin-top: 42px; }
   .package-card, .package-card:first-child { min-height: 430px; margin-bottom: 13px; }
+  .package-card__bottom { left: 20px; right: 20px; padding-bottom: 20px; }
+  .package-card h3 { font-size: 25px; line-height: 1.14; }
+  .package-card p { max-width: 100%; margin-top: 11px; line-height: 1.55; }
   .services-grid { display: block; margin-top: 45px; }
   .service-item, .service-item:not(:first-child), .service-item:nth-child(3) { min-height: 220px; padding: 22px 0; border-right: 0; border-bottom: 1px solid #d1d1c7; }
   .service-item:last-child { border-bottom: 0; }
