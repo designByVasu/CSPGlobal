@@ -99,7 +99,19 @@ export default function Home() {
     const onScroll = () => setScrolled(window.scrollY > 32);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      revealObserver.disconnect();
+    };
   }, []);
 
   const closeMobile = () => setMobileOpen(false);
@@ -167,7 +179,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="intro-section page-wrap" id="about">
+        <section className="intro-section page-wrap reveal" id="about">
           <div className="section-marker">01 <span>/</span> WHY CSP GLOBAL</div>
           <div className="intro-grid">
             <h2>Travel plans with<br /><em>a human touch.</em></h2>
@@ -193,7 +205,7 @@ export default function Home() {
             </div>
             <div className="package-grid">
               {packages.map((item, index) => (
-                <a className={`package-card package-card--${index + 1}`} href="#contact" key={item.title}>
+                  <a className={`package-card package-card--${index + 1} reveal reveal-delay-${index + 1}`} href="#contact" key={item.title}>
                   <img src={item.image} alt={item.title} />
                   <div className="package-card__shade" />
                   <div className="package-card__top"><span>{item.eyebrow}</span><span className="package-card__arrow"><ArrowUpRight size={18} /></span></div>
@@ -212,18 +224,18 @@ export default function Home() {
           <div className="services-grid">
             {services.map((service) => {
               const Icon = service.icon;
-              return <div className="service-item" key={service.number}><div className="service-item__top"><span>{service.number}</span><Icon size={24} strokeWidth={1.6} /></div><h3>{service.title}</h3><p>{service.copy}</p><ArrowRight className="service-item__arrow" size={18} /></div>;
+              return <div className="service-item reveal" key={service.number}><div className="service-item__top"><span>{service.number}</span><Icon size={24} strokeWidth={1.6} /></div><h3>{service.title}</h3><p>{service.copy}</p><ArrowRight className="service-item__arrow" size={18} /></div>;
             })}
           </div>
           <div className="service-note"><div className="service-note__icon"><Users size={20} /></div><p><strong>Travelling with a group?</strong> We’ll coordinate the moving parts so everyone can focus on the fun.</p><a href="#contact" className="text-link">Talk to a human <ArrowRight /></a></div>
         </section>
 
-        <section className="feature-section page-wrap" id="sightseeing">
+        <section className="feature-section page-wrap reveal" id="sightseeing">
           <div className="feature-photo"><img src={dudhsagar} alt="Dudhsagar waterfall surrounded by Goa's green forest" /><div className="feature-photo__label"><span>THE DAY TRIP</span><strong>Dudhsagar<br />in full flow</strong></div></div>
           <div className="feature-copy"><div className="section-marker">04 <span>/</span> BEYOND THE BEACH</div><h2>Chase the<br /><em>good kind</em><br />of wild.</h2><p>Board the jeep, follow the forest tracks and let Dudhsagar do what it does best: make you stop and stare.</p><ul><li><Check size={15} /> Hotel pickup & drop</li><li><Check size={15} /> Local trip coordination</li><li><Check size={15} /> Easy add-on to your Goa plan</li></ul><a className="button button--ink" href="#contact">Ask about Dudhsagar <ArrowUpRight /></a></div>
         </section>
 
-        <section className="enquire-section" id="contact">
+        <section className="enquire-section reveal" id="contact">
           <div className="page-wrap enquire-grid">
             <div className="enquire-copy"><div className="section-marker section-marker--light">05 <span>/</span> LET’S TALK GOA</div><h2>Tell us what<br /><em>you’re dreaming of.</em></h2><p>Dates, group size, a rough budget — or just “we want the beach.” Send what you know. We’ll take it from there.</p><div className="contact-details"><a href="tel:+918489036959"><Phone size={18} /> 84890 36959</a><a href="tel:+919356302194"><Phone size={18} /> 93563 02194</a><a href="mailto:cspglobeltours@gmail.com"><MessageCircle size={18} /> cspglobeltours@gmail.com</a></div></div>
             <form className="enquire-form" onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }}>
