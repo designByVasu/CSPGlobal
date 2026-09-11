@@ -121,7 +121,7 @@ export default function Home() {
       <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
         <div className="nav-inner">
           <a className="brand-lockup" href="#top" aria-label="CSP Global Tours home">
-            <span className="brand-mark"><img src={logo} alt="CSP Global Tour logo" /></span>
+            <span className="brand-mark"><img src={logo} alt="CSP Global Tour logo" width="48" height="48" /></span>
             <span className="brand-copy">
               <strong>CSP GLOBAL</strong>
               <small>TOURS & TRAVEL</small>
@@ -246,7 +246,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="page-wrap footer-grid"><div className="footer-brand"><a className="brand-lockup" href="#top"><span className="brand-mark"><img src={logo} alt="CSP Global Tour logo" /></span><span className="brand-copy"><strong>CSP GLOBAL</strong><small>TOURS & TRAVEL</small></span></a><p>Your trusted travel partner<br />in Goa, India.</p></div><div className="footer-links"><span className="footer-label">Explore</span><a href="#packages">Goa packages</a><a href="#sightseeing">Sightseeing</a><a href="#services">Cab & hotels</a></div><div className="footer-links"><span className="footer-label">Say hello</span><a href="tel:+918489036959">84890 36959</a><a href="tel:+919356302194">93563 02194</a><a href="mailto:cspglobeltours@gmail.com">Email us</a></div><div className="footer-address"><span className="footer-label">Visit us</span><p>Karpaga Vinayaga Pawn Broker Shop<br />Madurai Road, near Indian Bank<br />Opp. Durga Hotel, Usilampatti TK<br />Madurai DT · 625532</p></div></div><div className="page-wrap footer-bottom"><span>© {new Date().getFullYear()} CSP Global Tours</span><span>Goa, India <TreePalm size={13} /></span><a href="#top">Back to top <ChevronDown size={14} className="rotate-180" /></a></div>
+        <div className="page-wrap footer-grid"><div className="footer-brand"><a className="brand-lockup" href="#top"><span className="brand-mark"><img src={logo} alt="CSP Global Tour logo" width="48" height="48" /></span><span className="brand-copy"><strong>CSP GLOBAL</strong><small>TOURS & TRAVEL</small></span></a><p>Your trusted travel partner<br />in Goa, India.</p></div><div className="footer-links"><span className="footer-label">Explore</span><a href="#packages">Goa packages</a><a href="#sightseeing">Sightseeing</a><a href="#services">Cab & hotels</a></div><div className="footer-links"><span className="footer-label">Say hello</span><a href="tel:+918489036959">84890 36959</a><a href="tel:+919356302194">93563 02194</a><a href="mailto:cspglobeltours@gmail.com">Email us</a></div><div className="footer-address"><span className="footer-label">Visit us</span><p>Karpaga Vinayaga Pawn Broker Shop<br />Madurai Road, near Indian Bank<br />Opp. Durga Hotel, Usilampatti TK<br />Madurai DT · 625532</p></div></div><div className="page-wrap footer-bottom"><span>© {new Date().getFullYear()} CSP Global Tours</span><span>Goa, India <TreePalm size={13} /></span><a href="#top">Back to top <ChevronDown size={14} className="rotate-180" /></a></div>
       </footer>
     </div>
   );
