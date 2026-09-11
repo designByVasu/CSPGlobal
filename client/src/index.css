@@ -316,11 +316,13 @@ em { color: var(--orange); font-style: italic; font-weight: 400; }
   .trust-strip > div:nth-child(3) { padding-left: 0; }
   .trust-strip__last { padding-left: 12px !important; }
   .trust-strip strong { font-size: 29px; }
-  .packages-section, .enquire-section { padding: 82px 0; }
+  .packages-section, .enquire-section { padding: 78px 0; }
   .section-heading { display: block; }
-  .section-heading > p { margin-top: 25px; }
-  .package-grid { display: block; margin-top: 42px; }
-  .package-card, .package-card:first-child { min-height: 430px; margin-bottom: 13px; }
+  .section-heading--light h2 { max-width: 310px; font-size: 42px; line-height: 1.04; }
+  .section-heading > p { max-width: 315px; margin-top: 22px; line-height: 1.6; }
+  .package-grid { display: grid; grid-template-columns: repeat(3, minmax(282px, 82vw)); gap: 12px; margin-top: 38px; margin-right: -18px; padding-right: 18px; padding-bottom: 10px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .package-grid::-webkit-scrollbar { display: none; }
+  .package-card, .package-card:first-child { grid-column: auto; min-height: 395px; margin: 0; scroll-snap-align: start; }
   .package-card__bottom { left: 20px; right: 20px; padding-bottom: 20px; }
   .package-card h3 { font-size: 25px; line-height: 1.14; }
   .package-card p { max-width: 100%; margin-top: 11px; line-height: 1.55; }
