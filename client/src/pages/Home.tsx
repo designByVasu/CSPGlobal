@@ -20,10 +20,10 @@ import {
   X,
 } from "lucide-react";
 
-const logo = "/manus-storage/csp-logo_965bc057.jpg";
-const goaCoast = "/manus-storage/goa-coast_005cd887.jpg";
-const dudhsagar = "/manus-storage/dudhsagar_f9872a62.jpg";
-const southGoa = "/manus-storage/south-goa_fe42e332.png";
+import logo from "@/assets/csp-logo.jpg";
+import goaCoast from "@/assets/goa-coast.jpg";
+import dudhsagar from "@/assets/dudhsagar.jpg";
+import southGoa from "@/assets/south-goa.jpg";
 
 const navItems = [
   ["Goa Packages", "#packages"],
